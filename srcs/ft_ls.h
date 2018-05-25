@@ -6,7 +6,7 @@
 /*   By: sjuery <sjuery@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 18:38:41 by sjuery            #+#    #+#             */
-/*   Updated: 2018/05/21 19:25:38 by sjuery           ###   ########.fr       */
+/*   Updated: 2018/05/24 17:44:25 by sjuery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@ typedef struct				s_ls
 	DIR						*dir;
 	struct dirent 			*cdir;
 	char					*path;
-	int						flag_recursive:1;
-	int 					flag_reverse:1;
-	int						flag_all:1;
-	int						flag_long:1;
-	int 					flag_time:1;
+	unsigned int		flag_one;
+	unsigned int		flag_recursion;
+	unsigned int		flag_reverse;
+	unsigned int		flag_all;
+	unsigned int		flag_long;
+	unsigned int		flag_time;
 }							t_ls;
 
 //Sorting

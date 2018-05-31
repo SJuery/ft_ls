@@ -35,3 +35,21 @@ void *vector_get(t_vector *v, int index)
         return v->items[index];
     return NULL;
 }
+
+void vector_delete(t_vector *v, int index)
+{
+    if (index < 0 || index >= v->total)
+        return;
+
+    v->items[index] = NULL;
+
+    for (int i = index; i < v->total - 1; i++) {
+        v->items[i] = v->items[i + 1];
+        v->items[i + 1] = NULL;
+    }
+
+    v->total--;
+
+    if (v->total > 0 && v->total == v->capacity / 4)
+        vector_resize(v, v->capacity / 2);
+}

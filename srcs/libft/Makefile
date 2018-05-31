@@ -1,6 +1,6 @@
 NAME = libft.a
 
-CFLAGS += -I include/ -fsanitize=address -fsanitize=undefined
+CFLAGS += -O3 -march=native -I include/ -g
 
 SRCS = ft_memset.c \
 	   ft_bzero.c \

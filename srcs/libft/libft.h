@@ -6,7 +6,7 @@
 /*   By: sjuery <sjuery@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 15:42:34 by sjuery            #+#    #+#             */
-/*   Updated: 2018/05/21 19:26:10 by sjuery           ###   ########.fr       */
+/*   Updated: 2018/05/30 14:44:12 by sjuery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,7 +234,7 @@ char *stackPop(struct s_stack *stack);
 
 void vector_init(t_vector *);
 int vector_total(t_vector *);
-static void vector_resize(t_vector *, int);
+void vector_delete(t_vector *v, int index);
 void vector_add(t_vector *, void *);
 void vector_set(t_vector *, int, void *);
 void *vector_get(t_vector *, int);

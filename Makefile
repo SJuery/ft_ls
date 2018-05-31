@@ -6,7 +6,7 @@
 #    By: sjuery <sjuery@student.42.us.org>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/31 11:28:46 by sjuery            #+#    #+#              #
-#    Updated: 2018/05/21 19:28:23 by sjuery           ###   ########.fr        #
+#    Updated: 2018/05/30 15:05:07 by sjuery           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME	= ft_ls
 SRC		= 	srcs/ft_ls.c \
 
 OBJ 	= $(SRC:.c=.o)
-CFLAG	= -Wall -Wextra -Werror -g -fsanitize=address -fsanitize=undefined
+CFLAGS	= -Wall -Wextra -Werror -g -O3 -flto -march=native \
+#-fsanitize=address -fsanitize=undefined
 .SILENT:
 
 all: $(NAME)
@@ -23,7 +24,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	printf '\033[31m[...] %s\n\033[0m' "Creating LS Command"
 	make -C srcs/libft/
-	gcc $(CFLAG) srcs/libft/libft.a $^ -o $(NAME)
+	gcc $(CFLAGS) srcs/libft/libft.a $^ -o $(NAME)
 	printf '\033[32m[ ✔ ] %s\n\033[0m' "Created LS Command"
 
 clean:

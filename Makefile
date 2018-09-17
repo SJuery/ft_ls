@@ -6,7 +6,7 @@
 #    By: sjuery <sjuery@student.42.us.org>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/31 11:28:46 by sjuery            #+#    #+#              #
-#    Updated: 2018/05/30 15:05:07 by sjuery           ###   ########.fr        #
+#    Updated: 2018/09/16 22:02:35 by sjuery           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME	= ft_ls
 SRC		= 	srcs/ft_ls.c \
 
 OBJ 	= $(SRC:.c=.o)
-CFLAGS	= -Wall -Wextra -Werror -g -O3 -flto -march=native \
+CFLAGS	= -Wall -Wextra -Werror -g -O3 -flto=thin -march=native \
 #-fsanitize=address -fsanitize=undefined
 .SILENT:
 

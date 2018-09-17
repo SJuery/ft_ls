@@ -87,6 +87,7 @@ SRCS = ft_memset.c \
 	   queue.c \
 	   stack.c \
 	   vectors.c \
+	   vector_quicksort.c \
 
 
 OBJS = $(SRCS:.c=.o)

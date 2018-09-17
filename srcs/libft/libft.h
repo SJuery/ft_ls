@@ -6,7 +6,7 @@
 /*   By: sjuery <sjuery@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 15:42:34 by sjuery            #+#    #+#             */
-/*   Updated: 2018/05/30 14:44:12 by sjuery           ###   ########.fr       */
+/*   Updated: 2018/09/16 19:59:01 by sjuery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@
 # define EXCEPT !exc ? i + 2 : i
 # define SHARP (prtf->sharp ? 1 + i : i)
 # define BUFF_SIZE 1
+# define MATCH(a,b) if (a) b
+# define OR(a,b) else if (a) b
+# define OTHERWISE(a) else a
 
 typedef struct 				s_vector
 {
@@ -106,6 +109,7 @@ typedef struct		s_list
 int					ft_printf(const char *format, ...);
 int					parse_input(va_list args, t_printf *prtf,
 											t_fpointer *fptr);
+void 				quicksort(t_vector vector, int p, int len);
 char				*ft_itoa_base(unsigned long long int value,
 											int base, int lowercase);
 int					parse_flags(char *orgstr, t_printf *prtf);

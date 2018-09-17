@@ -6,7 +6,7 @@
 /*   By: sjuery <sjuery@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 18:38:41 by sjuery            #+#    #+#             */
-/*   Updated: 2018/05/30 13:13:27 by sjuery           ###   ########.fr       */
+/*   Updated: 2018/09/16 22:00:00 by sjuery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,17 @@
 typedef struct				s_ls
 {
 	DIR						*dir;
-	struct dirent 			*cdir;
-	char					*path;
+	struct dirent 			*cd;
+	t_vector				vector;
+	char					*cf;
 	struct s_stack			*stack;
+	char					*buf;
+	ssize_t					bufs;
+	long long int			blocks;
+	struct stat 			ps;
+	struct stat 			fs;
+	char 					*rf;
+	char 					*pf;
 	unsigned short int		flag_one;
 	unsigned short int		flag_recursion;
 	unsigned short int		flag_reverse;
@@ -30,8 +38,3 @@ typedef struct				s_ls
 	unsigned short int		flag_long;
 	unsigned short int		flag_time;
 }							t_ls;
-
-//Sorting
-
-void quicksort(t_vector vector, int p, int len);
-int partition(t_vector vector, int p, int r);

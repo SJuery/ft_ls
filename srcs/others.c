@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quicksort.c                                        :+:      :+:    :+:   */
+/*   others.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sjuery <sjuery@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/16 19:26:14 by sjuery            #+#    #+#             */
-/*   Updated: 2018/09/24 16:51:55 by sjuery           ###   ########.fr       */
+/*   Updated: 2018/09/24 20:18:01 by sjuery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int	compare(t_vector vector, int v1, int v2, t_ls *ls)
 	struct stat	sv1;
 	struct stat sv2;
 
-	if (ls->flag_time)
+	if (ls->f_time)
 	{
 		stat(join_path(vector_get(&vector, v1), ls), &sv1);
 		free(ls->tmpstr);

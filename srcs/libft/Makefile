@@ -1,6 +1,6 @@
 NAME = libft.a
 
-CFLAGS += -O3 -march=native -I include/ -g
+CFLAGS += -O3 -Wall -Wextra -Werror -march=native -I include/ -g
 
 SRCS = ft_memset.c \
 	   ft_bzero.c \
@@ -70,6 +70,7 @@ SRCS = ft_memset.c \
 	   ft_intlen.c \
 	   ft_putnstr.c \
 	   ft_widelen.c \
+	   ft_putunbr.c \
 	   printf/conv_hexa.c \
 	   printf/conv_octa.c \
 	   printf/conv_simu.c \
@@ -87,8 +88,6 @@ SRCS = ft_memset.c \
 	   queue.c \
 	   stack.c \
 	   vectors.c \
-	   vector_quicksort.c \
-
 
 OBJS = $(SRCS:.c=.o)
 

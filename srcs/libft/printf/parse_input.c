@@ -6,7 +6,7 @@
 /*   By: sjuery <sjuery@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/15 23:42:10 by sjuery            #+#    #+#             */
-/*   Updated: 2018/01/30 20:36:16 by sjuery           ###   ########.fr       */
+/*   Updated: 2018/09/17 15:15:12 by sjuery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ void	flags_to_converter(t_fpointer *fptr)
 
 int		parse_input(va_list ap, t_printf *prtf, t_fpointer *fptr)
 {
-	return (fptr->converter[prtf->spec](ap, prtf));
+	return (fptr->converter[(int)prtf->spec](ap, prtf));
 }

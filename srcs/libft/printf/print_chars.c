@@ -6,7 +6,7 @@
 /*   By: sjuery <sjuery@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/15 23:43:16 by sjuery            #+#    #+#             */
-/*   Updated: 2018/01/30 20:36:21 by sjuery           ###   ########.fr       */
+/*   Updated: 2018/09/24 15:10:42 by sjuery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ static int	no_minus(t_printf *prtf, char *c, int j)
 			write(1, c, ft_strlen(c));
 			i += ft_strlen(c);
 		}
+	free(c);
 	if (prtf->precision < (int)ft_strlen(prtf->uvals.cp))
 		i += null_precision(prtf);
 	if (!prtf->precise)
@@ -53,33 +54,33 @@ static int	no_minus(t_printf *prtf, char *c, int j)
 	return (i);
 }
 
-static int	flag_args(t_printf *prtf)
+static int	flag_args(t_printf *p)
 {
 	char	*c;
 	int		i;
 
 	i = 0;
-	c = prtf->zero ? conv_uni('0') : conv_uni(' ');
-	if (prtf->precise)
-		prtf->precise = (prtf->precision < (ft_strlen(prtf->uvals.cp))) ? 1 : 0;
-	if (prtf->minus)
+	c = p->zero ? conv_uni('0') : conv_uni(' ');
+	if (p->precise)
+		p->precise = (p->precision < (int)(ft_strlen(p->uvals.cp))) ? 1 : 0;
+	if (p->minus)
 	{
-		if (prtf->precise)
-			i += null_precision(prtf);
+		if (p->precise)
+			i += null_precision(p);
 		else
 		{
-			i = ft_strlen(prtf->uvals.cp);
-			write(1, prtf->uvals.cp, i);
+			i = ft_strlen(p->uvals.cp);
+			write(1, p->uvals.cp, i);
 		}
-		while (i < prtf->size)
+		while (i < p->size)
 		{
 			write(1, c, ft_strlen(c));
 			i += ft_strlen(c);
+			free(c);
 		}
 		return (i);
 	}
-	else
-		return (i + no_minus(prtf, c, ft_strlen(prtf->uvals.cp)));
+	return (i + no_minus(p, c, ft_strlen(p->uvals.cp)));
 }
 
 int			print_char(char arg, t_printf *prtf)
